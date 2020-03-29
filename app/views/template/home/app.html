@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>@yield("title")</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone = no" />
+	@include("home.css")
+</head>
+<body>
+<main>
+    <img class="img-top" src="/themes/index/images/img-bac.jpg" />
+    <img class="word-title" src="/themes/index/images/word-title.png" />
+    <div class="container-fluid">
+		@section("content")
+		内容区域
+		@show
+    </div>
+
+
+</main>
+</body>
+</html>

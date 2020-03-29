@@ -1,0 +1,212 @@
+2020-03-26 10:08:10--27--E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\Home\Controllers\indexAction.php--Array
+(
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [title] => 标题1
+                )
+
+            [1] => Array
+                (
+                    [id] => 2
+                    [title] => 标题2
+                )
+
+            [2] => Array
+                (
+                    [id] => 3
+                    [title] => 标题3
+                )
+
+            [3] => Array
+                (
+                    [id] => 4
+                    [list] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [id] => 1
+                                    [title] => 标题1
+                                )
+
+                            [1] => Array
+                                (
+                                    [id] => 2
+                                    [title] => 标题2
+                                )
+
+                            [2] => Array
+                                (
+                                    [id] => 3
+                                    [title] => 标题3
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+2020-03-26 10:13:25--27--E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\Home\Controllers\indexAction.php--Array
+(
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [title] => 标题1
+                )
+
+            [1] => Array
+                (
+                    [id] => 2
+                    [title] => 标题2
+                )
+
+            [2] => Array
+                (
+                    [id] => 3
+                    [title] => 标题3
+                )
+
+            [3] => Array
+                (
+                    [id] => 4
+                    [list] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [id] => 1
+                                    [title] => 标题1
+                                )
+
+                            [1] => Array
+                                (
+                                    [id] => 2
+                                    [title] => 标题2
+                                )
+
+                            [2] => Array
+                                (
+                                    [id] => 3
+                                    [title] => 标题3
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+2020-03-26 10:34:24--27--E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\Home\Controllers\indexAction.php--Array
+(
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [title] => 标题1
+                )
+
+            [1] => Array
+                (
+                    [id] => 2
+                    [title] => 标题2
+                )
+
+            [2] => Array
+                (
+                    [id] => 3
+                    [title] => 标题3
+                )
+
+            [3] => Array
+                (
+                    [id] => 4
+                    [list] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [id] => 1
+                                    [title] => 标题1
+                                )
+
+                            [1] => Array
+                                (
+                                    [id] => 2
+                                    [title] => 标题2
+                                )
+
+                            [2] => Array
+                                (
+                                    [id] => 3
+                                    [title] => 标题3
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+
+2020-03-26 10:34:54--27--E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\Home\Controllers\indexAction.php--Array
+(
+    [data] => Array
+        (
+            [0] => Array
+                (
+                    [id] => 1
+                    [title] => 标题1
+                )
+
+            [1] => Array
+                (
+                    [id] => 2
+                    [title] => 标题2
+                )
+
+            [2] => Array
+                (
+                    [id] => 3
+                    [title] => 标题3
+                )
+
+            [3] => Array
+                (
+                    [id] => 4
+                    [list] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [id] => 1
+                                    [title] => 标题1
+                                )
+
+                            [1] => Array
+                                (
+                                    [id] => 2
+                                    [title] => 标题2
+                                )
+
+                            [2] => Array
+                                (
+                                    [id] => 3
+                                    [title] => 标题3
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
+

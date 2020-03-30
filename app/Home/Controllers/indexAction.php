@@ -26,9 +26,12 @@ class indexAction extends Controller {
 			))
 		);
 		
-		cookie()->httponly()->save("name","1223");
+		//cookie()->httponly()->save("name","1223");
 		
-		$arr = session("name");
+		$arr = cache("name");
+		print_r($arr);
+		
+		//var_dump($result);
 		
 		$this->view($data);
 	}

@@ -6,34 +6,33 @@ class menuAction extends CommonAction {
 
 	function __construct() {
 		parent::__construct();
-		$this->model = $this->models("menu");
 	}
 	
 	function index(){
-		$data["menuAction"] = $this->models("auth")->getMenuAction();
-		$data["list"] = $this->model->index();
-		$this->view('list',$data);
+		$data = array();
+		$this->view('index',$data);
 	}
 	
 	function add(){
-		$data["list"] = $this->model->topMenu();
-		$data["action"] = $this->model->getAction();
-		$this->view($data);
+		$data = array();
+		$this->view('add',$data);
 	}
 	
 	function edit(){
-		$data["list"] = $this->model->topMenu();
-		$data["action"] = $this->model->getAction();
-		$data["row"] = $this->model->getRow();
-		$this->view($data);
+
+	}
+	
+	function detail(){
+		$data = array();
+		$this->view('detail',$data);
 	}
 	
 	function save(){
-		$this->model->save();
+
 	}
 	
 	function remove(){
-		$this->model->remove();
+
 	}
 }
 

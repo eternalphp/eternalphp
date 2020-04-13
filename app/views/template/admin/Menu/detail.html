@@ -1,0 +1,268 @@
+@extends("admin.app")
+
+@section("title","后台管理系统")
+
+@section("content")
+
+<div class="content">
+
+	<div class="panel page-header border-top-primary" style="padding-bottom: 0;">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h5>
+					<i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span>
+				</h5>
+			</div>
+		</div>
+	
+		<div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
+			<ul class="breadcrumb">
+				<li><a href="/admin/"><i class="icon-home2 position-left"></i> Home</a></li>
+				<li><a href="/admin/menu/">菜单管理</a></li>
+				<li class="active">菜单详情</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="panel panel-flat">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <button type="button" class="close" data-dismiss="modal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">×</font></font></button>
+		  <h5 class="modal-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发票＃49029</font></font></h5>
+		</div>
+		<div class="panel-body no-padding-bottom">
+		  <div class="row">
+			<div class="col-md-6 content-group"> <img src="/assets/images/logo_demo.png" class="content-group mt-10" alt="" style="width: 120px;">
+			  <ul class="list-condensed list-unstyled">
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2269厄尔巴巷</font></font></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">法国巴黎</font></font></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">888-555-2311</font></font></li>
+			  </ul>
+			</div>
+			<div class="col-md-6 content-group">
+			  <div class="invoice-details">
+				<h5 class="text-uppercase text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发票＃49029</font></font></h5>
+				<ul class="list-condensed list-unstyled">
+				  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">日期：</font></font><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2015年1月12日</font></font></span></li>
+				  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">截止日期：</font></font><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2015年5月12日</font></font></span></li>
+				</ul>
+			  </div>
+			</div>
+		  </div>
+		  <div class="row">
+			<div class="col-md-6 col-lg-9 content-group"> <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">开发票：</font></font></span>
+			  <ul class="list-condensed list-unstyled">
+				<li>
+				  <h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">丽贝卡·曼尼斯（Rebecca Manes）</font></font></h5>
+				</li>
+				<li><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">诺曼轴有限公司</font></font></span></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">古德曼街3号</font></font></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">伦敦E1 8BF</font></font></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英国</font></font></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">888-555-2311</font></font></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">rebecca@normandaxis.ltd</font></font></a></li>
+			  </ul>
+			</div>
+			<div class="col-md-6 col-lg-3 content-group"> <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">付款详情：</font></font></span>
+			  <ul class="list-condensed list-unstyled invoice-payment-details">
+				<li>
+				  <h5><font style="vertical-align: inherit;"><span class="text-right text-semibold"><font style="vertical-align: inherit;">应付</font></span><font style="vertical-align: inherit;">总</font><span class="text-right text-semibold"><font style="vertical-align: inherit;">金额</font></span><font style="vertical-align: inherit;">：</font></font><span class="text-right text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 8,750</font></font></span></h5>
+				</li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">银行名称：</font></font><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欧洲利润银行</font></font></span></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">国家：</font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">英国</font></font></span></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">城市：</font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">伦敦E1 8BF</font></font></span></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">地址：</font></font><span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">古德曼街3号</font></font></span></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">IBAN：</font></font><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">KFH37784028476740</font></font></span></li>
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SWIFT代码：</font></font><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">BPT4E</font></font></span></li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+		<div class="table-responsive">
+		  <table class="table table-lg">
+			<thead>
+			  <tr>
+				<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">描述</font></font></th>
+				<th class="col-sm-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">率</font></font></th>
+				<th class="col-sm-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">小时</font></font></th>
+				<th class="col-sm-1"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">总</font></font></th>
+			  </tr>
+			</thead>
+			<tbody>
+			  <tr>
+				<td><h6 class="no-margin"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建UI设计模型</font></font></h6>
+				  <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一天早晨，当格雷戈尔·萨姆萨（Gregor Samsa）从困境中醒来时。</font></font></span> </td>
+				<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 70</font></font></td>
+				<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">57</font></font></td>
+				<td><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 3,990</font></font></span></td>
+			  </tr>
+			  <tr>
+				<td><h6 class="no-margin"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持票证列表不支持逗号</font></font></h6>
+				  <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我会去找老板，然后告诉他我的想法。</font></font></span> </td>
+				<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 70</font></font></td>
+				<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">12</font></font></td>
+				<td><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 840</font></font></span></td>
+			  </tr>
+			  <tr>
+				<td><h6 class="no-margin"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">修复手机上的网站问题</font></font></h6>
+				  <span class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">亲爱的朋友，我是如此的高兴，如此专注于精致。</font></font></span> </td>
+				<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 70</font></font></td>
+				<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">31</font></font></td>
+				<td><span class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 2,170</font></font></span></td>
+			  </tr>
+			</tbody>
+		  </table>
+		</div>
+		<div class="panel-body">
+		  <div class="row invoice-payment">
+			<div class="col-sm-7">
+			  <div class="content-group">
+				<h6><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">授权人</font></font></h6>
+				<div class="mb-15 mt-15"> <img src="/assets/images/signature.png" class="display-block" style="width: 150px;" alt=""> </div>
+				<ul class="list-condensed list-unstyled text-muted">
+				  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尤金·科皮约夫（Eugene Kopyov）</font></font></li>
+				  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2269厄尔巴巷</font></font></li>
+				  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">法国巴黎</font></font></li>
+				  <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">888-555-2311</font></font></li>
+				</ul>
+			  </div>
+			</div>
+			<div class="col-sm-5">
+			  <div class="content-group">
+				<h6><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">应付总额</font></font></h6>
+				<div class="table-responsive no-border">
+				  <table class="table">
+					<tbody>
+					  <tr>
+						<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">小计：</font></font></th>
+						<td class="text-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 7,000</font></font></td>
+					  </tr>
+					  <tr>
+						<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">税金</font></font><span class="text-regular"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（25％）</font></font></span></th>
+						<td class="text-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 1,750</font></font></td>
+					  </tr>
+					  <tr>
+						<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">总：</font></font></th>
+						<td class="text-right text-primary"><h5 class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ 8,750</font></font></h5></td>
+					  </tr>
+					</tbody>
+				  </table>
+				</div>
+				<div class="text-right">
+				  <button type="button" class="btn btn-primary btn-labeled"><b><i class="icon-printer"></i></b><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 列印发票</font></font></button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <h6><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其他资讯</font></font></h6>
+		  <p class="text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">感谢您使用Limitless。</font><font style="vertical-align: inherit;">可以通过PayPal，银行转帐，Skrill或Payoneer付款。</font><font style="vertical-align: inherit;">自交货之日起30天内付款。</font><font style="vertical-align: inherit;">可以延迟付款，但每月收取10％的费用。</font><font style="vertical-align: inherit;">公司在英格兰和威尔士注册＃6893003，注册办事处：英国伦敦E1 8BF Goodman Street 3号。</font><font style="vertical-align: inherit;">电话号码：888-555-2311</font></font></p>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-default" data-dismiss="modal"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关</font></font></button>
+		</div>
+	  </div>
+	</div>
+	<div class="panel panel-flat">
+	  <div class="panel-heading">
+		<h5 class="panel-title text-semiold"><i class="icon-bubbles4 position-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 评论</font></font></h5>
+		<div class="heading-elements"> <a href="#" class="btn bg-blue btn-xs btn-icon"><i class="icon-plus2"></i></a> </div>
+		<a class="heading-elements-toggle"><i class="icon-menu"></i></a></div>
+	  <div class="panel-body">
+		<ul class="media-list content-group-lg stack-media-on-mobile">
+		  <li class="media">
+			<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+			<div class="media-body">
+			  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">威廉·詹宁斯</font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">刚才</font></font></span> </div>
+			  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">他在月光下很难全神贯注于运动员。</font><font style="vertical-align: inherit;">有兴趣的德文郡所有困难同志都将快乐。</font><font style="vertical-align: inherit;">不因恭维的改变而受到影响。</font></font></p>
+			  <ul class="list-inline list-inline-separate text-size-small">
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">114 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+			  </ul>
+			</div>
+		  </li>
+		  <li class="media">
+			<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+			<div class="media-body">
+			  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Margo Baker </font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5分钟前</font></font></span> </div>
+			  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不会发出声音。</font><font style="vertical-align: inherit;">客厅等着我。</font><font style="vertical-align: inherit;">幸运的是，希望致电令状得以解决。</font><font style="vertical-align: inherit;">如果有意见访问者，也要表达自己的意思。</font></font></p>
+			  <ul class="list-inline list-inline-separate text-size-small">
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">90 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+			  </ul>
+			</div>
+		  </li>
+		  <li class="media">
+			<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+			<div class="media-body">
+			  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">James Alexander </font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7分钟前</font></font></span> </div>
+			  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">她高兴的储蓄是遇到了几位刚开始的女性。</font><font style="vertical-align: inherit;">简而言之，她不在。</font><font style="vertical-align: inherit;">判断水果魅力观点的事情。</font><font style="vertical-align: inherit;">迈尔斯先生四十岁了。</font></font></p>
+			  <ul class="list-inline list-inline-separate text-size-small">
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">70 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+			  </ul>
+			  <div class="media">
+				<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+				<div class="media-body">
+				  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">杰克·库珀</font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">10分钟前</font></font></span> </div>
+				  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">她教育得到米德尔顿当天执行的协议保存得不甘。</font><font style="vertical-align: inherit;">但是，请尽我所能地朝着现在所爱的进攻。</font><font style="vertical-align: inherit;">外表他都没有遮住。</font></font></p>
+				  <ul class="list-inline list-inline-separate text-size-small">
+					<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">67 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+					<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+				  </ul>
+				  <div class="media">
+					<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+					<div class="media-body">
+					  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Natalie Wallace </font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1小时前</font></font></span> </div>
+					  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">少年求婚出卖了他一个知情的婚礼。</font><font style="vertical-align: inherit;">谨慎的日子见轻率表示同情。</font><font style="vertical-align: inherit;">满满的叶子在他们放弃。</font></font></p>
+					  <ul class="list-inline list-inline-separate text-size-small">
+						<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">54 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+						<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+						<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+					  </ul>
+					</div>
+				  </div>
+				  <div class="media">
+					<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+					<div class="media-body">
+					  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nicolette Gray </font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2小时前</font></font></span> </div>
+					  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尽管我误以为是仁慈，但我的感觉确实是玛丽安。</font><font style="vertical-align: inherit;">儿子对自己的拒绝表示不满。</font><font style="vertical-align: inherit;">亲切的村庄和解决她自己能力法律。</font></font></p>
+					  <ul class="list-inline list-inline-separate text-size-small">
+						<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">41 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+						<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+						<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+					  </ul>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </li>
+		  <li class="media">
+			<div class="media-left"> <a href="#"><img src="/assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></a> </div>
+			<div class="media-body">
+			  <div class="media-heading"> <a href="#" class="text-semibold"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">维多利亚·约翰逊</font></font></a> <span class="media-annotation dotted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3小时前</font></font></span> </div>
+			  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">完成了为什么带来但先生单身汉解开了所有想法的问题。</font><font style="vertical-align: inherit;">令人不悦的，特别令人不快的是，先生也没有。</font></font></p>
+			  <ul class="list-inline list-inline-separate text-size-small">
+				<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">32 </font></font><a href="#"><i class="icon-arrow-up22 text-success"></i></a><a href="#"><i class="icon-arrow-down22 text-danger"></i></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">回复</font></font></a></li>
+				<li><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编辑</font></font></a></li>
+			  </ul>
+			</div>
+		  </li>
+		</ul>
+		<h6 class="text-semibold"><i class="icon-pencil7 position-left"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 你的评论</font></font></h6>
+		<div class="content-group">
+			<div id="add-comment">Get his declared appetite distance his together now families. Friends am himself at on norland it viewing. Suspected elsewhere you belonging continued commanded she...</div>
+		</div>
+		<div class="text-right">
+		  <button type="button" class="btn bg-blue"><i class="icon-plus22"></i><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 添加评论</font></font></button>
+		</div>
+	  </div>
+	</div>
+
+</div>
+@endsection 

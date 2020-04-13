@@ -1,0 +1,73 @@
+@extends("admin.app")
+
+@section("title","后台管理系统")
+
+@section("content")
+
+<div class="content">
+	<div class="panel page-header border-top-primary" style="padding-bottom: 0;">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h5>
+					<i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span>
+				</h5>
+			</div>
+	
+			<div class="heading-elements">
+				<button type="button" class="btn btn-primary heading-btn">添加</button>
+				<button type="button" class="btn btn-primary heading-btn">编辑</button>
+				<button type="button" class="btn btn-primary heading-btn">删除</button>
+			</div>
+		</div>
+	
+		<div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
+			<ul class="breadcrumb">
+				<li><a href="/admin/"><i class="icon-home2 position-left"></i> Home</a></li>
+				<li><a href="/admin/menu/">菜单管理</a></li>
+				<li class="active">菜单列表</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="panel panel-flat">
+	  <div class="table-responsive">
+		<table class="table">
+		  <thead>
+			<tr>
+			  <th>#</th>
+			  <th>First Name</th>
+			  <th>Last Name</th>
+			  <th>Username</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <td>1</td>
+			  <td>Eugene</td>
+			  <td>Kopyov</td>
+			  <td>@Kopyov</td>
+			</tr>
+			<tr>
+			  <td>2</td>
+			  <td>Victoria</td>
+			  <td>Baker</td>
+			  <td>@Vicky</td>
+			</tr>
+			<tr>
+			  <td>3</td>
+			  <td>James</td>
+			  <td>Alexander</td>
+			  <td>@Alex</td>
+			</tr>
+			<tr>
+			  <td>4</td>
+			  <td>Franklin</td>
+			  <td>Morrison</td>
+			  <td>@Frank</td>
+			</tr>
+		  </tbody>
+		</table>
+	  </div>
+	</div>
+</div>
+@endsection 

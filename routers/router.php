@@ -51,6 +51,8 @@ Router::namespace("Home")->group(function(){
 
 Router::namespace("Admin")->prefix('admin')->group(function(){
 	
+
+	
 	Router::get('/',"adminAction@index");
 	Router::get('/login',"loginAction@index");
 	Router::post('/login/chklogin',"loginAction@chklogin");
@@ -141,6 +143,7 @@ Router::namespace("Admin")->prefix('admin')->group(function(){
 	Router::get('/menu/edit',"menuAction@edit");
 	Router::post('/menu/save',"menuAction@save");
 	Router::get('/menu/remove',"menuAction@remove");
+	Router::get('/menu/detail',"menuAction@detail");
 	
 	Router::any('/manual',"manualAction@index");
 	Router::get('/manual/add',"manualAction@add");
@@ -159,5 +162,4 @@ Router::namespace("Admin")->prefix('admin')->group(function(){
 	Router::post('/upload/upload',"uploadAction@upload");
 	Router::post('/upload/cropper',"uploadAction@cropper");
 	Router::post('/upload/upfile',"uploadAction@upfile");
-	
 });

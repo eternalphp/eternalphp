@@ -18,15 +18,20 @@ class ComposerStaticInit4bc0b9dac3b80ba0301d32a01874cfec
         'f' => 
         array (
             'framework\\View\\' => 15,
+            'framework\\Validate\\' => 19,
             'framework\\Util\\' => 15,
             'framework\\Support\\' => 18,
             'framework\\Session\\' => 18,
             'framework\\Router\\' => 17,
             'framework\\Redis\\' => 16,
+            'framework\\Pipeline\\' => 19,
+            'framework\\Logger\\' => 17,
+            'framework\\Language\\' => 19,
             'framework\\Http\\' => 15,
             'framework\\Foundation\\' => 21,
             'framework\\Filesystem\\' => 21,
             'framework\\Exception\\' => 20,
+            'framework\\Event\\' => 16,
             'framework\\Debug\\' => 16,
             'framework\\Database\\Schema\\' => 26,
             'framework\\Database\\Eloquent\\' => 28,
@@ -37,9 +42,17 @@ class ComposerStaticInit4bc0b9dac3b80ba0301d32a01874cfec
             'framework\\Config\\' => 17,
             'framework\\Cache\\' => 16,
         ),
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'Q' => 
         array (
             'QL\\' => 3,
+        ),
+        'P' => 
+        array (
+            'Psr\\Log\\' => 8,
         ),
         'G' => 
         array (
@@ -59,6 +72,10 @@ class ComposerStaticInit4bc0b9dac3b80ba0301d32a01874cfec
         'framework\\View\\' => 
         array (
             0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/View',
+        ),
+        'framework\\Validate\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Validate',
         ),
         'framework\\Util\\' => 
         array (
@@ -80,6 +97,18 @@ class ComposerStaticInit4bc0b9dac3b80ba0301d32a01874cfec
         array (
             0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Redis',
         ),
+        'framework\\Pipeline\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Pipeline',
+        ),
+        'framework\\Logger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Logger',
+        ),
+        'framework\\Language\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Language',
+        ),
         'framework\\Http\\' => 
         array (
             0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Http',
@@ -95,6 +124,10 @@ class ComposerStaticInit4bc0b9dac3b80ba0301d32a01874cfec
         'framework\\Exception\\' => 
         array (
             0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Exception',
+        ),
+        'framework\\Event\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Event',
         ),
         'framework\\Debug\\' => 
         array (
@@ -132,9 +165,17 @@ class ComposerStaticInit4bc0b9dac3b80ba0301d32a01874cfec
         array (
             0 => __DIR__ . '/..' . '/eternalphp/framework/src/framework/Cache',
         ),
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
         'QL\\' => 
         array (
             0 => __DIR__ . '/..' . '/jaeger/querylist',
+        ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
         ),
         'Gao\\Gao\\' => 
         array (

@@ -911,77 +911,37 @@
 			<!-- Main content -->
 			<div class="content-wrapper">
 			
-				
-<div class="content">
+				@section("content")
+				<div class="panel page-header border-top-primary" style="padding-bottom: 0;">
+					<div class="page-header-content">
+						<div class="page-title">
+							<h5>
+								<i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span>
+							</h5>
+						</div>
 
-  <div class="panel page-header border-top-primary" style="padding-bottom: 0;">
-    <div class="page-header-content">
-      <div class="page-title">
-        <h5> <i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span> </h5>
-      </div>
-    </div>
-    <div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
-      <ul class="breadcrumb">
-        <li><a href="/admin/"><i class="icon-home2 position-left"></i> Home</a></li>
-        <li><a href="/admin/menu/">菜单管理</a></li>
-        <li class="active">添加菜单</li>
-      </ul>
-    </div>
-  </div>
-  
-  <form action="#">
-    <div class="panel panel-flat">
-      <div class="panel-heading">
-        <h5 class="panel-title">添加菜单</h5>
-	  </div>
-      <div class="panel-body">
-	  
-        <div class="form-group">
-          <label>上级菜单:</label>
-			<select data-placeholder="请选择上级菜单" class="select">
-				<option value="0">顶级菜单</option> 
-				<option value="United Kingdom">United Kingdom</option> 
-				<option value="...">...</option> 
-				<option value="Australia">Australia</option> 
-			</select>
-        </div>
-	  
-        <div class="form-group">
-          <label>菜单名称:</label>
-          <input type="text" class="form-control" placeholder="菜单名称">
-        </div>
-		
-        <div class="form-group">
-          <label>地址:</label>
-          <input type="text" class="form-control" placeholder="Url">
-        </div>
-		
-        <div class="form-group">
-          <label class="display-block">显示/隐藏:</label>
-          <label class="radio-inline">
-		  <input type="radio" name="hidden" value="1" class="styled" checked="checked">
-          显示
-          </label>
-          <label class="radio-inline">
-		  <input type="radio" name="hidden" value="2" class="styled">
-          隐藏
-          </label>
-        </div>
+						<div class="heading-elements">
+							<button type="button" class="btn btn-primary heading-btn">添加</button>
+							<button type="button" class="btn btn-primary heading-btn">编辑</button>
+							<button type="button" class="btn btn-primary heading-btn">删除</button>
+						</div>
+					</div>
 
-        <div class="form-group">
-          <label>备注:</label>
-          <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注"></textarea>
-        </div>
-		
-        <div class="text-right">
-          <button type="submit" class="btn btn-primary">Submit form <i class="icon-arrow-right14 position-right"></i></button>
-        </div>
-		
-      </div>
-    </div>
-  </form>
-</div>
+					<div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
+						<ul class="breadcrumb">
+							<li><a href="index.html"><i class="icon-home2 position-left"></i> Home</a></li>
+							<li><a href="components_page_header.html">Current</a></li>
+							<li class="active">Location</li>
+						</ul>
+					</div>
+				</div>
 
+				<!-- Content area -->
+				<div class="content">
+
+				</div>
+				<!-- /content area -->
+				@show
 				
 				<div class="content">
 					<!-- Footer -->
@@ -1002,3 +962,6 @@
 
 </body>
 </html>
+@section("loadJS")
+<script></script>
+@show

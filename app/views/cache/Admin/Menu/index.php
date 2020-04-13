@@ -25,6 +25,10 @@
 	<!-- Theme JS files -->
 	<script type="text/javascript" src="/assets/js/plugins/visualization/d3/d3.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+	
+	<script type="text/javascript" src="/assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switch.min.js"></script>
+	
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/uniform.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
@@ -980,7 +984,7 @@
 				<div class="content">
 					<!-- Footer -->
 					<div class="footer text-muted">
-						&copy; 2015. <a href="#">Limitless Web App Kit</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">Eugene Kopyov</a>
+						&copy; 2025. <a href="#">易站后台管理系统</a> by <a href="http://themeforest.net/user/Kopyov" target="_blank">kld230@163.com</a>
 					</div>
 					<!-- /footer -->
 				</div>

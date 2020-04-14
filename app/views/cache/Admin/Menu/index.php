@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="/assets/js/plugins/forms/selects/select2.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switch.min.js"></script>
 	
+	<script type="text/javascript" src="/assets/js/plugins/forms/validation/validate.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/uniform.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
@@ -38,6 +39,7 @@
 	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="/assets/js/core/libraries/jquery_ui/datepicker.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/notifications/pnotify.min.js"></script>
 
 	<script type="text/javascript" src="/assets/js/core/app.js"></script>
 	<script type="text/javascript" src="/assets/js/pages/layout_fixed_custom.js"></script>
@@ -923,9 +925,9 @@
 			</div>
 	
 			<div class="heading-elements">
-				<button type="button" class="btn btn-primary heading-btn">添加</button>
-				<button type="button" class="btn btn-primary heading-btn">编辑</button>
-				<button type="button" class="btn btn-primary heading-btn">删除</button>
+				<button type="button" class="btn btn-primary heading-btn" id="add">添加</button>
+				<button type="button" class="btn btn-primary heading-btn" id="edit">编辑</button>
+				<button type="button" class="btn btn-primary heading-btn" id="remove">删除</button>
 			</div>
 		</div>
 	
@@ -944,36 +946,21 @@
 		  <thead>
 			<tr>
 			  <th>#</th>
-			  <th>First Name</th>
-			  <th>Last Name</th>
-			  <th>Username</th>
+			  <th>菜单名称</th>
+			  <th>Url</th>
+			  <th>管理</th>
 			</tr>
 		  </thead>
 		  <tbody>
+		  	<?php foreach($list as $k=>$val) {?>
 			<tr>
-			  <td>1</td>
-			  <td>Eugene</td>
-			  <td>Kopyov</td>
-			  <td>@Kopyov</td>
+			  <td><?=$k+1?></td>
+			  <td><?=$val["name"]?></td>
+			  <td><?=$val["url"]?></td>
+			  <td>编辑 | 删除</td>
 			</tr>
-			<tr>
-			  <td>2</td>
-			  <td>Victoria</td>
-			  <td>Baker</td>
-			  <td>@Vicky</td>
-			</tr>
-			<tr>
-			  <td>3</td>
-			  <td>James</td>
-			  <td>Alexander</td>
-			  <td>@Alex</td>
-			</tr>
-			<tr>
-			  <td>4</td>
-			  <td>Franklin</td>
-			  <td>Morrison</td>
-			  <td>@Frank</td>
-			</tr>
+			<?php }?>
+
 		  </tbody>
 		</table>
 	  </div>
@@ -1000,3 +987,11 @@
 
 </body>
 </html>
+
+<script>
+  $(function(){
+  	  $("#add").click(function(){
+	  	  location.href = "/admin/menu/add";
+	  })
+  })
+</script>

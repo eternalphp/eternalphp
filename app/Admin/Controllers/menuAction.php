@@ -8,19 +8,20 @@ class menuAction extends CommonAction {
 	
 	public function __construct(menuModel $model) {
 		parent::__construct();
-		
 		$this->model = $model;
+		$this->view->realtime();
 	}
 	
 	function index(){
 		$data = array();
+		$data["list"] = $this->model->index()->formatList();
+		print_r($data["list"]);
 		$this->view('index',$data);
 	}
 	
 	function add(){
 		$data = array();
 		$data["menu"] = $this->model->getMenu();
-		$this->view->realtime();
 		$this->view('add',$data);
 	}
 	
@@ -34,7 +35,7 @@ class menuAction extends CommonAction {
 	}
 	
 	function save(){
-
+		$this->model->save();
 	}
 	
 	function remove(){

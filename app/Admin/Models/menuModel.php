@@ -27,18 +27,62 @@ class menuModel extends Model {
 	protected $table = 'menu';
 	protected $primaryKey = 'menuid';
 	
+	private $data = array();
+	
     public function __construct() {
         parent::__construct();
     }
 	
     public function index() {
-		
+		$this->data = $this->select();
+		return $this;
     }
 	
 	public function getMenu(){
 		return $this->where("parentid=0")
 		->order("sort asc")
 		->select();
+	}
+	
+	public function save(){
+		if(requestInt("menuid") > 0){
+			$this->modify();
+		}else{
+			$this->create();
+		}
+	}
+	
+	public function create(){
+		$result = $this->insert($_POST);
+		if($result){
+			echo success(array('errmsg'=>'提交成功'));
+		}else{
+			echo fail(array('errmsg'=>'提交失败'));
+		}
+	}
+	
+	public function modify(){
+		
+	}
+	
+	public function formatList($pid = 0){
+		foreach($this->data as $k=>$val){
+			if($val["parentid"] == $pid){
+				$this->dataList[$val["parentid"]][] = $this->data[$k];
+				unset($this->data[$k]);
+				$this->formatList($val["menuid"]);
+			}
+		}
+		
+		if($this->dataList){
+			foreach($this->dataList as $pid=>$val){
+				$sorts = array_column($val,'sort');
+				array_multisort($sorts,SORT_DESC,$val);
+				$this->dataList[$pid] = $val;
+			}
+		}
+		
+		return $this->dataList;
 	}
 }
 ?>

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e34bf2aebae83dd61a3cf0e3c541a5cf",
+    "content-hash": "dff6a1750e77ce0b51af7f924b8dfc24",
     "packages": [
         {
             "name": "eternalphp/framework",
-            "version": "v1.6.0",
+            "version": "v1.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/eternalphp/framework.git",
-                "reference": "2b6315ef29c2d00864d33983b2e302856826e079"
+                "reference": "d00feedd989d5d4a9532d884f73623832dc01dcb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/eternalphp/framework/zipball/2b6315ef29c2d00864d33983b2e302856826e079",
-                "reference": "2b6315ef29c2d00864d33983b2e302856826e079",
+                "url": "https://api.github.com/repos/eternalphp/framework/zipball/d00feedd989d5d4a9532d884f73623832dc01dcb",
+                "reference": "d00feedd989d5d4a9532d884f73623832dc01dcb",
                 "shasum": ""
             },
             "require": {
@@ -70,7 +70,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2020-04-13T14:41:12+00:00"
+            "time": "2020-04-13T16:32:31+00:00"
         },
         {
             "name": "eternalphp/wordcontrol",

@@ -29,6 +29,7 @@
 	<script type="text/javascript" src="/assets/js/plugins/forms/selects/select2.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switch.min.js"></script>
 	
+	<script type="text/javascript" src="/assets/js/plugins/forms/validation/validate.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/uniform.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
@@ -38,6 +39,7 @@
 	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
 	<script type="text/javascript" src="/assets/js/core/libraries/jquery_ui/datepicker.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/notifications/pnotify.min.js"></script>
 
 	<script type="text/javascript" src="/assets/js/core/app.js"></script>
 	<script type="text/javascript" src="/assets/js/pages/layout_fixed_custom.js"></script>
@@ -1970,3 +1972,6 @@
 
 </body>
 </html>
+@section("loadJS")
+<script></script>
+@show

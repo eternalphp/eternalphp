@@ -10,12 +10,13 @@ class menuAction extends CommonAction {
 		parent::__construct();
 		$this->model = $model;
 		$this->view->realtime();
+		$this->authMenu = $this->model->index()->getAuthMenu();
+		cache("menus",$this->authMenu);
 	}
 	
 	function index(){
 		$data = array();
 		$data["list"] = $this->model->index()->formatList();
-		print_r($data["list"]);
 		$this->view('index',$data);
 	}
 	

@@ -33,6 +33,8 @@ class indexAction extends Controller {
 		
 		//var_dump($result);
 		
+		echo csrf_token();
+		
 		$this->view($data);
 	}
 

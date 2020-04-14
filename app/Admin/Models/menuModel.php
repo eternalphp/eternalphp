@@ -34,7 +34,7 @@ class menuModel extends Model {
     }
 	
     public function index() {
-		$this->data = $this->select();
+		$this->data = $this->order("parentid asc,sort desc")->select();
 		return $this;
     }
 	
@@ -68,21 +68,26 @@ class menuModel extends Model {
 	public function formatList($pid = 0){
 		foreach($this->data as $k=>$val){
 			if($val["parentid"] == $pid){
-				$this->dataList[$val["parentid"]][] = $this->data[$k];
-				unset($this->data[$k]);
+				$this->dataList[] = $this->data[$k];
 				$this->formatList($val["menuid"]);
 			}
 		}
-		
-		if($this->dataList){
-			foreach($this->dataList as $pid=>$val){
-				$sorts = array_column($val,'sort');
-				array_multisort($sorts,SORT_DESC,$val);
-				$this->dataList[$pid] = $val;
+		return $this->dataList;
+	}
+	
+	public function getAuthMenu($pid = 0){
+		foreach($this->data as $k=>$val){
+			if($val["parentid"] == $pid){
+				if($pid == 0){
+					$this->authMenu[$val["menuid"]] = $this->data[$k];
+				}else{
+					$this->authMenu[$pid]["items"][] = $this->data[$k];
+				}
+				$this->getAuthMenu($val["menuid"]);
 			}
 		}
 		
-		return $this->dataList;
+		return $this->authMenu;
 	}
 }
 ?>

@@ -44,7 +44,7 @@
 		  	@foreach($list as $k=>$val)
 			<tr>
 			  <td>{{ $k+1 }}</td>
-			  <td>{{ $val["name"] }}</td>
+			  <td>@if($val["parentid"] > 0) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @endif {{ $val["name"] }}</td>
 			  <td>{{ $val["url"] }}</td>
 			  <td>编辑 | 删除</td>
 			</tr>

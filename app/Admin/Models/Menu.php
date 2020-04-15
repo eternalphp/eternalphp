@@ -22,7 +22,7 @@
 namespace App\Admin\Models;
 use framework\Database\Eloquent\Model;
 
-class menuModel extends Model {
+class Menu extends Model {
 	
 	protected $table = 'menu';
 	protected $primaryKey = 'menuid';
@@ -88,6 +88,12 @@ class menuModel extends Model {
 		}
 		
 		return $this->authMenu;
+	}
+	
+	public function getRow(){
+		if(requestInt("menuid") > 0){
+			return $this->where("menuid",requestInt("menuid"))->find();
+		}
 	}
 }
 ?>

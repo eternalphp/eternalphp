@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Admin\Controllers;
-use App\Admin\Models\menuModel;
+use App\Admin\Models\Menu;
 
 class menuAction extends CommonAction {
 	
 	
-	public function __construct(menuModel $model) {
+	public function __construct(Menu $model) {
 		parent::__construct();
 		$this->model = $model;
 		$this->view->realtime();
@@ -22,12 +22,19 @@ class menuAction extends CommonAction {
 	
 	function add(){
 		$data = array();
-		$data["menu"] = $this->model->getMenu();
+		$data["menu"] = $this->model->index()->formatList();
 		$this->view('add',$data);
 	}
 	
 	function edit(){
-
+		$data = array();
+		$data["menu"] = $this->model->index()->formatList();
+		$data["row"] = $this->model->getRow();
+		$this->view('add',$data);
+	}
+	
+	function page(){
+		$this->view('page');
 	}
 	
 	function detail(){

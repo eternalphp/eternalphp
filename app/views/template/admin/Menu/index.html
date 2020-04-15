@@ -4,7 +4,7 @@
 
 @section("content")
 
-<div class="content">
+
 	<div class="panel page-header border-top-primary" style="padding-bottom: 0;">
 		<div class="page-header-content">
 			<div class="page-title">
@@ -46,7 +46,7 @@
 			  <td>{{ $k+1 }}</td>
 			  <td>@if($val["parentid"] > 0) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @endif {{ $val["name"] }}</td>
 			  <td>{{ $val["url"] }}</td>
-			  <td>编辑 | 删除</td>
+			  <td><a href="{{ url("/admin/menu/edit",array('menuid'=>$val["menuid"])) }}">编辑</a> | <a href="{{ url("/admin/menu/remove",array('menuid'=>$val["menuid"])) }}">删除</a></td>
 			</tr>
 			@endforeach
 
@@ -54,7 +54,7 @@
 		</table>
 	  </div>
 	</div>
-</div>
+
 @endsection
 
 @section("loadJS")

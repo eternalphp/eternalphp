@@ -144,6 +144,7 @@ Router::namespace("Admin")->prefix('admin')->group(function(){
 	Router::post('/menu/save',"menuAction@save");
 	Router::get('/menu/remove',"menuAction@remove");
 	Router::get('/menu/detail',"menuAction@detail");
+	Router::get('/menu/page',"menuAction@page");
 	
 	Router::any('/manual',"manualAction@index");
 	Router::get('/manual/add',"manualAction@add");

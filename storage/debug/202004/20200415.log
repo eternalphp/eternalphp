@@ -4,3 +4,8 @@
 [2020-04-15 00:12:48] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\index.php | 322
 [2020-04-15 00:12:51] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\index.php | 322
 [2020-04-15 00:24:32] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\add.php | 322
+[2020-04-15 09:23:50] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\eternalphp\app\views\cache\Admin\Admin\index.php | 323
+[2020-04-15 13:08:38] | WARN | [2] | file_get_contents(E:\phpStudy\wwwroot\yuanzhongyi\eternalphp\app\views/template/admin\Amin\navaber.html): failed to open stream: No such file or directory | E:\phpStudy\wwwroot\yuanzhongyi\eternalphp\vendor\eternalphp\framework\src\framework\View\Engine.php | 159
+[2020-04-15 13:13:12] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\eternalphp\app\views\cache\Admin\Menu\index.php | 327
+[2020-04-15 18:15:55] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\eternalphp\app\views\cache\Admin\Admin\index.php | 303
+[2020-04-15 18:15:55] | WARN | [2] | Invalid argument supplied for foreach() | E:\phpStudy\wwwroot\yuanzhongyi\eternalphp\app\views\cache\Admin\Admin\index.php | 303

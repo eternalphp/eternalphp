@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -82,46 +81,46 @@
 			<select data-placeholder="请选择上级菜单" name="parentid" class="select">
 				<option value="0">顶级菜单</option>
 				<?php foreach($menu as $k=>$val) {?>
-				<option value="<?=$val["menuid"]?>"> <?php if($val["parentid"] > 0) {?> &nbsp;&nbsp;&nbsp;&nbsp;<?php }?> <?=$val["name"]?> </option>
+				<option value="<?=$val['menuid']?>" <?php if($val["menuid"] == $row["parentid"]) {?> selected="selected" <?php }?>> <?php if($val["parentid"] > 0) {?> &nbsp;&nbsp;&nbsp;&nbsp;<?php }?> <?=$val["name"]?> </option>
 				<?php }?>
 			</select>
         </div>
 	  
         <div class="form-group">
           <label>菜单名称:</label>
-          <input type="text" name="name" class="form-control" placeholder="菜单名称" value="<?=$row["name"]?>">
+          <input type="text" name="name" class="form-control" placeholder="菜单名称" value="<?=$row['name']?>" />
         </div>
 		
         <div class="form-group">
           <label>地址:</label>
-          <input type="text" name="url" class="form-control" placeholder="Url">
+          <input type="text" name="url" class="form-control" placeholder="Url" value="<?=$row['url']?>"/>
         </div>
 		
         <div class="form-group">
           <label class="display-block">显示/隐藏:</label>
           <label class="radio-inline">
-		  <input type="radio" name="hidden" value="0" class="styled" checked="checked">
+		  <input type="radio" name="hidden" value="0" class="styled" <?php if($row["hidden"] == 0) {?> checked="checked" <?php }?>>
           显示
           </label>
           <label class="radio-inline">
-		  <input type="radio" name="hidden" value="1" class="styled">
+		  <input type="radio" name="hidden" value="1" class="styled" <?php if($row["hidden"] == 1) {?> checked="checked" <?php }?>>
           隐藏
           </label>
         </div>
 		
         <div class="form-group">
           <label>排序:</label>
-          <input type="text" name="sort" class="form-control" placeholder="请输入数字">
+          <input type="text" name="sort" class="form-control" placeholder="请输入数字" value="<?=$row['sort']?>" />
         </div>
 		
         <div class="form-group">
           <label>图标:</label>
-          <input type="text" name="style" class="form-control" placeholder="请输入图标样式">
+          <input type="text" name="style" class="form-control" placeholder="请输入图标样式" value="<?=$row['style']?>">
         </div>
 
         <div class="form-group">
           <label>备注:</label>
-          <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注"></textarea>
+          <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注"><?=$row['remark']?></textarea>
         </div>
 		
         <div class="text-right">

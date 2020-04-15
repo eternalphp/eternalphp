@@ -24,6 +24,7 @@
 	<!-- /core JS files -->
 
 	<script type="text/javascript" src="/assets/js/core/app.js"></script>
+	<script type="text/javascript" src="/assets/js/pages/layout_fixed_custom.js"></script>
 
 	<!-- /theme JS files -->
 </head>

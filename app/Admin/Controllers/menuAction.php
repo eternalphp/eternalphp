@@ -10,8 +10,6 @@ class menuAction extends CommonAction {
 		parent::__construct();
 		$this->model = $model;
 		$this->view->realtime();
-		$this->authMenu = $this->model->index()->getAuthMenu();
-		cache("menus",$this->authMenu);
 	}
 	
 	function index(){

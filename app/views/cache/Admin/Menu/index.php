@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -53,8 +52,6 @@
 	<!-- Main content -->
 	<div class="content-wrapper" style="display:block;">
 	
-
-
 	<div class="panel page-header border-top-primary" style="padding-bottom: 0;">
 		<div class="page-header-content">
 			<div class="page-title">
@@ -96,18 +93,24 @@
 			  <td><?=$k+1?></td>
 			  <td><?php if($val["parentid"] > 0) {?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php }?> <?=$val["name"]?></td>
 			  <td><?=$val["url"]?></td>
-			  <td><a href="<?=url("/admin/menu/edit",array('menuid'=>$val["menuid"]))?>">编辑</a> | <a href="<?=url("/admin/menu/remove",array('menuid'=>$val["menuid"]))?>">删除</a></td>
+			  <td><a href="<?=url("/admin/menu/edit",array('menuid'=>$val["menuid"]))?>"><span class="label label-primary"> 编辑 </label></a>  <a href="<?=url("/admin/menu/remove",array('menuid'=>$val["menuid"]))?>"><span class="label label-danger"> 删除 </label></a></td>
 			</tr>
 			<?php }?>
-
 		  </tbody>
 		</table>
 	  </div>
 	</div>
-
 
 	</div>
 	<!-- /main content -->
 
 </body>
 </html>
+
+<script>
+  $(function(){
+  	  $("#add").click(function(){
+	  	  location.href = "/admin/menu/add";
+	  })
+  })
+</script>

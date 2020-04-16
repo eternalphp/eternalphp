@@ -303,7 +303,7 @@
 			<!-- Main content -->
 			<div class="content-wrapper" style="margin:0px; padding:0px;">
 				<div class="content" style="padding:0px 10px;">
-					<iframe name="pageContent" width="100%" height="100%" src="/admin/menu/page" frameborder="0" data-id="index_v1.html" seamless></iframe>
+					<iframe name="pageContent" width="100%" height="100%" src="/admin/menu/page" frameborder="0" seamless></iframe>
 					
 
 					<!-- Footer -->
@@ -328,7 +328,8 @@
 $(function(){
 	var height = $(document.body).height();
 	var navbar = $(".navbar").height();
-	var footer = $(".footer").parent().height();
 	$(".content").css("height",height - navbar);
+	
+	
 })
 </script>

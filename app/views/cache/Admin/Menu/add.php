@@ -81,7 +81,7 @@
 			<select data-placeholder="请选择上级菜单" name="parentid" class="select">
 				<option value="0">顶级菜单</option>
 				<?php foreach($menu as $k=>$val) {?>
-				<option value="<?=$val['menuid']?>" <?php if($val["menuid"] == $row["parentid"]) {?> selected="selected" <?php }?>> <?php if($val["parentid"] > 0) {?> &nbsp;&nbsp;&nbsp;&nbsp;<?php }?> <?=$val["name"]?> </option>
+				<option value="<?=$val['menuid']?>" <?php if($val["menuid"] == $row["parentid"]) {?> selected="selected" <?php }?>> <?=$val["space"]?> <?=$val["name"]?> </option>
 				<?php }?>
 			</select>
         </div>
@@ -126,6 +126,8 @@
         <div class="text-right">
           <button type="submit" class="btn btn-primary">提交 <i class="icon-arrow-right14 position-right"></i></button>
         </div>
+		
+		<input name="menuid" type="hidden" value="<?=$row['menuid']?>" />
 		
       </div>
     </div>

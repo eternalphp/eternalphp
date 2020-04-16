@@ -78,21 +78,23 @@
 	
 	<div class="panel panel-flat">
 	  <div class="table-responsive">
-		<table class="table">
+		<table width="100%" class="table table-striped">
 		  <thead>
 			<tr>
-			  <th>#</th>
-			  <th>菜单名称</th>
-			  <th>Url</th>
-			  <th>管理</th>
+			  <th width="7%">#</th>
+			  <th width="30%">菜单名称</th>
+			  <th width="25%">Url</th>
+			  <th width="19%" align="center">Icon</th>
+			  <th width="19%">管理</th>
 			</tr>
 		  </thead>
 		  <tbody>
 		  	<?php foreach($list as $k=>$val) {?>
 			<tr>
-			  <td><?=$k+1?></td>
-			  <td><?php if($val["parentid"] > 0) {?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <?php }?> <?=$val["name"]?></td>
+			  <td align="center"><?=$k+1?></td>
+			  <td><?php if($val["parentid"] > 0) {?> <?=$val['space']?> <?php }?> <?=$val["name"]?></td>
 			  <td><?=$val["url"]?></td>
+			  <td align="left"> <span class="<?=$val['style']?>"></span> </td>
 			  <td><a href="<?=url("/admin/menu/edit",array('menuid'=>$val["menuid"]))?>"><span class="label label-primary"> 编辑 </label></a>  <a href="<?=url("/admin/menu/remove",array('menuid'=>$val["menuid"]))?>"><span class="label label-danger"> 删除 </label></a></td>
 			</tr>
 			<?php }?>

@@ -1,21 +1,26 @@
-<div class="sidebar-category sidebar-category-visible">
-  <div class="category-content no-padding">
-    <ul class="navigation navigation-main navigation-accordion">
-      <!-- Main -->
-      <li class="navigation-header"><span>菜单</span> <i class="icon-menu" title="Main pages"></i></li>
-      <li><a href="/admin/"><i class="icon-home4"></i> <span>主页</span></a></li>
-      @foreach($menus as $val)
-      <li> <a href="#"><i class="{{ $val["style"] }}"></i> <span>{{ $val["name"] }}</span></a>
-	  	@if($val["items"])
-        <ul>
-          @foreach($val["items"] as $sub)
-          <li @if($_SERVER["PATH_INFO"] == $sub["url"]) class="active"@endif><a href="{{ $sub["url"] }}" target="pageContent">{{ $sub["name"] }}</a></li>
-          @endforeach
-        </ul>
-		@endif
-      </li>
-      @endforeach
-      <!-- /main -->
-    </ul>
-  </div>
-</div>
+				<div class="sidebar-category sidebar-category-visible">
+				  <div class="category-content no-padding">
+					<ul class="navigation navigation-main navigation-accordion">
+					 
+					  <!-- Main -->
+					  
+					  @foreach($menus as $menu)
+					  <li class="navigation-header"><span>{{ $menu["name"] }}</span> <i class="icon-menu" title="Main pages"></i></li>
+					  @if($menu['items'])
+					  @foreach($menu['items'] as $row)
+					  <li> <a href="#"><i class="{{ $row["style"] }}"></i> <span>{{ $row["name"] }}</span></a>
+						@if($row["items"])
+						<ul>
+						  @foreach($row["items"] as $val)
+						  <li><a href="{{ $val["url"] }}" target="pageContent">{{ $val["name"] }}</a></li>
+						  @endforeach
+						</ul>
+						@endif
+					  </li>
+					  @endforeach
+					  @endif
+					  <!-- /main -->
+					  @endforeach
+					</ul>
+				  </div>
+				</div>

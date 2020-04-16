@@ -62,37 +62,47 @@ class Menu extends Model {
 	}
 	
 	public function modify(){
-		
+		if(requestInt("menuid") > 0){
+			$result = $this->where("menuid",requestInt("menuid"))->update($_POST);
+			if($result){
+				echo success(array('errmsg'=>'保存成功'));
+			}else{
+				echo fail(array('errmsg'=>'保存失败'));
+			}
+		}
 	}
 	
-	public function formatList($pid = 0){
+	public function formatList($pid = 0,$leave = 0){
 		foreach($this->data as $k=>$val){
 			if($val["parentid"] == $pid){
+				$this->data[$k]["space"] = str_repeat("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;",$leave);
 				$this->dataList[] = $this->data[$k];
-				$this->formatList($val["menuid"]);
+				$num = $leave+1;
+				$this->formatList($val["menuid"],$num);
 			}
 		}
 		return $this->dataList;
 	}
 	
 	public function getAuthMenu($pid = 0){
-		foreach($this->data as $k=>$val){
-			if($val["parentid"] == $pid){
-				if($pid == 0){
-					$this->authMenu[$val["menuid"]] = $this->data[$k];
-				}else{
-					$this->authMenu[$pid]["items"][] = $this->data[$k];
+		$menus = array();
+		foreach($this->data as $row){
+			if($row["parentid"] == $pid){
+				
+				$data = $this->getAuthMenu($row["menuid"]);
+				if($data){
+					$row["items"] = $data;
 				}
-				$this->getAuthMenu($val["menuid"]);
+				
+				$menus[] = $row;
 			}
 		}
-		
-		return $this->authMenu;
+		return $menus;
 	}
 	
 	public function getRow(){
 		if(requestInt("menuid") > 0){
-			return $this->where("menuid",requestInt("menuid"))->find();
+			return $this->find(requestInt("menuid"));
 		}
 	}
 }

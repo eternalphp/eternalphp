@@ -32,7 +32,7 @@
 			<select data-placeholder="请选择上级菜单" name="parentid" class="select">
 				<option value="0">顶级菜单</option>
 				@foreach($menu as $k=>$val)
-				<option value="{{ $val['menuid'] }}" @if($val["menuid"] == $row["parentid"]) selected="selected" @endif> @if($val["parentid"] > 0) &nbsp;&nbsp;&nbsp;&nbsp;@endif {{ $val["name"] }} </option>
+				<option value="{{ $val['menuid'] }}" @if($val["menuid"] == $row["parentid"]) selected="selected" @endif> {{ $val["space"] }} {{ $val["name"] }} </option>
 				@endforeach
 			</select>
         </div>
@@ -77,6 +77,8 @@
         <div class="text-right">
           <button type="submit" class="btn btn-primary">提交 <i class="icon-arrow-right14 position-right"></i></button>
         </div>
+		
+		<input name="menuid" type="hidden" value="{{ $row['menuid'] }}" />
 		
       </div>
     </div>

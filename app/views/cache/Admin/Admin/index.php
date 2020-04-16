@@ -292,27 +292,32 @@
 					<!-- /user menu -->
 
 					<!-- Main navigation -->
-					<div class="sidebar-category sidebar-category-visible">
-  <div class="category-content no-padding">
-    <ul class="navigation navigation-main navigation-accordion">
-      <!-- Main -->
-      <li class="navigation-header"><span>菜单</span> <i class="icon-menu" title="Main pages"></i></li>
-      <li><a href="/admin/"><i class="icon-home4"></i> <span>主页</span></a></li>
-      <?php foreach($menus as $val) {?>
-      <li> <a href="#"><i class="<?=$val["style"]?>"></i> <span><?=$val["name"]?></span></a>
-	  	<?php if($val["items"]) {?>
-        <ul>
-          <?php foreach($val["items"] as $sub) {?>
-          <li <?php if($_SERVER["PATH_INFO"] == $sub["url"]) {?> class="active"<?php }?>><a href="<?=$sub["url"]?>" target="pageContent"><?=$sub["name"]?></a></li>
-          <?php }?>
-        </ul>
-		<?php }?>
-      </li>
-      <?php }?>
-      <!-- /main -->
-    </ul>
-  </div>
-</div>
+									<div class="sidebar-category sidebar-category-visible">
+				  <div class="category-content no-padding">
+					<ul class="navigation navigation-main navigation-accordion">
+					 
+					  <!-- Main -->
+					  
+					  <?php foreach($menus as $menu) {?>
+					  <li class="navigation-header"><span><?=$menu["name"]?></span> <i class="icon-menu" title="Main pages"></i></li>
+					  <?php if($menu['items']) {?>
+					  <?php foreach($menu['items'] as $row) {?>
+					  <li> <a href="#"><i class="<?=$row["style"]?>"></i> <span><?=$row["name"]?></span></a>
+						<?php if($row["items"]) {?>
+						<ul>
+						  <?php foreach($row["items"] as $val) {?>
+						  <li><a href="<?=$val["url"]?>" target="pageContent"><?=$val["name"]?></a></li>
+						  <?php }?>
+						</ul>
+						<?php }?>
+					  </li>
+					  <?php }?>
+					  <?php }?>
+					  <!-- /main -->
+					  <?php }?>
+					</ul>
+				  </div>
+				</div>
 
 					<!-- /main navigation -->
 
@@ -324,7 +329,7 @@
 			<!-- Main content -->
 			<div class="content-wrapper" style="margin:0px; padding:0px;">
 				<div class="content" style="padding:0px 10px;">
-					<iframe name="pageContent" width="100%" height="100%" src="/admin/menu/page" frameborder="0" data-id="index_v1.html" seamless></iframe>
+					<iframe name="pageContent" width="100%" height="100%" src="/admin/menu/page" frameborder="0" seamless></iframe>
 					
 
 					<!-- Footer -->
@@ -349,7 +354,8 @@
 $(function(){
 	var height = $(document.body).height();
 	var navbar = $(".navbar").height();
-	var footer = $(".footer").parent().height();
 	$(".content").css("height",height - navbar);
+	
+	
 })
 </script>

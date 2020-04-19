@@ -298,15 +298,10 @@
 					 
 					  <!-- Main -->
 					  
-					  <?php foreach($menus as $menu) {?>
-					  <li class="navigation-header"><span><?=$menu["name"]?></span> <i class="icon-menu" title="Main pages"></i></li>
-					  <?php if($menu['items']) {?>
-					  <?php foreach($menu['items'] as $row) {?>
-					  <li> <a href="#"><i class="<?=$row["style"]?>"></i> <span><?=$row["name"]?></span></a>
-						<?php if($row["items"]) {?>
-						<ul>
-						  <?php foreach($row["items"] as $val) {?>
-						  <li><a href="<?=$val["url"]?>" target="pageContent"><?=$val["name"]?></a></li>
+					  <?php foreach($menus as $menu) {?><li class="navigation-header"><span><?=$menu["name"]?></span> <i class="icon-menu" title="Main pages"></i></li>
+					  <?php if($menu['items']) {?><?php foreach($menu['items'] as $row) {?><li> <a href="#"><i class="<?=$row["style"]?>"></i> <span><?=$row["name"]?></span></a>
+						<?php if($row["items"]) {?><ul>
+						  <?php foreach($row["items"] as $val) {?><li><a href="<?=$val["url"]?>" target="pageContent"><?=$val["name"]?></a></li>
 						  <?php }?>
 						</ul>
 						<?php }?>

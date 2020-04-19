@@ -120,6 +120,7 @@ Router::namespace("Admin")->prefix('admin')->group(function(){
 	Router::get('/user/selectParty',"userAction@selectParty");
 	
 	Router::any('/role',"roleAction@index");
+	Router::any('/role/getList',"roleAction@getList");
 	Router::get('/role/add',"roleAction@add");
 	Router::get('/role/edit',"roleAction@edit");
 	Router::post('/role/save',"roleAction@save");

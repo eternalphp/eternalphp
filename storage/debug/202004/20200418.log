@@ -1,0 +1,10 @@
+[2020-04-18 23:42:34] | WARN | [2] | in_array() expects parameter 2 to be array, null given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\add.php | 98
+[2020-04-18 23:42:34] | WARN | [2] | in_array() expects parameter 2 to be array, null given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\add.php | 98
+[2020-04-18 23:42:34] | WARN | [2] | in_array() expects parameter 2 to be array, null given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\add.php | 98
+[2020-04-18 23:42:34] | WARN | [2] | in_array() expects parameter 2 to be array, null given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\add.php | 98
+[2020-04-18 23:42:34] | WARN | [2] | in_array() expects parameter 2 to be array, null given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\app\views\cache\Admin\Menu\add.php | 98
+[2020-04-18 23:44:03] | WARN | [2] | trim() expects parameter 1 to be string, array given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\vendor\eternalphp\framework\src\framework\Database\Eloquent\Model.php | 372
+[2020-04-18 23:44:13] | WARN | [2] | trim() expects parameter 1 to be string, array given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\vendor\eternalphp\framework\src\framework\Database\Eloquent\Model.php | 372
+[2020-04-18 23:46:50] | WARN | [2] | trim() expects parameter 1 to be string, array given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\vendor\eternalphp\framework\src\framework\Database\Eloquent\Model.php | 372
+[2020-04-18 23:47:45] | WARN | [2] | trim() expects parameter 1 to be string, array given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\vendor\eternalphp\framework\src\framework\Database\Eloquent\Model.php | 372
+[2020-04-18 23:56:45] | WARN | [2] | trim() expects parameter 1 to be string, array given | E:\phpStudy\wwwroot\yuanzhongyi\dahe\vendor\eternalphp\framework\src\framework\Database\Eloquent\Model.php | 372

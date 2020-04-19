@@ -1,0 +1,65 @@
+@extends("admin.app")
+
+
+
+@section("content")
+	<div class="panel page-header border-top-primary" style="padding-bottom: 0;">
+		<div class="page-header-content">
+			<div class="page-title">
+				<h5>
+					<i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span>
+				</h5>
+			</div>
+	
+			<div class="heading-elements">
+				<button type="button" class="btn btn-primary heading-btn" id="add">添加</button>
+				<button type="button" class="btn btn-primary heading-btn" id="edit">编辑</button>
+				<button type="button" class="btn btn-primary heading-btn" id="remove">删除</button>
+			</div>
+		</div>
+	
+		<div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
+			<ul class="breadcrumb">
+				<li><a href="/admin/"><i class="icon-home2 position-left"></i> Home</a></li>
+				<li><a href="/admin/role/">角色管理</a></li>
+				<li class="active">角色列表</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="panel panel-flat">
+	  <div class="table-responsive">
+		<table width="100%" class="table table-striped" 
+			data-toggle="table" 
+			data-url="/admin/role/getList" 
+			data-pagination="true" 
+			data-icon-size="outline" 
+			data-search="true"
+			data-show-search-button="true"
+		>
+		  <thead>
+			<tr>
+			  <th width="7%" data-field="roleid">#</th>
+			  <th width="30%" data-field="rolename">角色名称</th>
+			  <th width="25%" data-field="createtime">创建时间</th>
+			  <th width="19%" align="center" data-field="statusText">状态</th>
+			  <th width="19%">管理</th>
+			</tr>
+		  </thead>
+		</table>
+	  </div>
+	</div>
+@endsection
+
+@section("loadJS")
+<script src="/assets/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/assets/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/assets/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+<script>
+  $(function(){
+  	  $("#add").click(function(){
+	  	  location.href = "/admin/role/add";
+	  }) 
+  })
+</script>
+@endsection

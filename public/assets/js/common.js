@@ -76,7 +76,12 @@ $(function() {
     // ------------------------------
 
     // Checkboxes, radios
-    $(".styled").uniform({ radioClass: 'choice' });
+    //$(".styled").uniform({ radioClass: 'choice' });
+	
+    $('.styled, .multiselect-container input').uniform({
+        radioClass: 'choice',
+        wrapperClass: 'border-primary text-primary'
+    });
 
     // File input
     $(".file-styled").uniform({

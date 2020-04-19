@@ -18,41 +18,19 @@
 // +----------------------------------------------------------------------+
 //
 // $Id:$
-namespace App\Admin\Controllers;
 
-class categoryAction extends CommonAction {
+namespace App\Admin\Models;
+use framework\Database\Eloquent\Model;
+
+class Action extends Model {
 	
-    function __construct() {
+	protected $table = 'action';
+	protected $primaryKey = 'actionid';
+	
+	private $data = array();
+	
+    public function __construct() {
         parent::__construct();
-        $this->model = $this->models('category');
-    }
-	
-    function index() {
-        $data = array();
-		$data["menuAction"] = $this->models("auth")->getMenuAction();
-        $data['list'] = $this->model->index();
-		$url = $this->search(array('starttime','endtime','keyword'));
-        $total = $this->model->pages['count'];
-        $data['pagelink'] = $this->librarys('Page')->show($url, $total, $perPage = 30, $pageBarNum = 5, $mode = 1);
-        $data['total'] = $total;
-        $this->view('list', $data);
-    }
-	
-    function add() {
-        $this->view();
-    }
-
-    function edit() {
-		$data["row"] = $this->model->getRow();
-        $this->view($data);
-    }
-	
-    function save() {
-        $this->model->save();
-    }
-	
-    function remove() {
-        $this->model->remove();
     }
 }
 ?>

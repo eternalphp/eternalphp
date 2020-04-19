@@ -89,10 +89,9 @@
 			</tr>
 		  </thead>
 		  <tbody>
-		  	<?php foreach($list as $k=>$val) {?>
-			<tr>
+		  	<?php foreach($list as $k=>$val) {?><tr>
 			  <td align="center"><?=$k+1?></td>
-			  <td><?php if($val["parentid"] > 0) {?> <?=$val['space']?> <?php }?> <?=$val["name"]?></td>
+			  <td><?php if($val["parentid"] > 0) {?><?=$val['space']?> <?php }?> <?=$val["name"]?></td>
 			  <td><?=$val["url"]?></td>
 			  <td align="left"> <span class="<?=$val['style']?>"></span> </td>
 			  <td><a href="<?=url("/admin/menu/edit",array('menuid'=>$val["menuid"]))?>"><span class="label label-primary"> 编辑 </label></a>  <a href="<?=url("/admin/menu/remove",array('menuid'=>$val["menuid"]))?>"><span class="label label-danger"> 删除 </label></a></td>

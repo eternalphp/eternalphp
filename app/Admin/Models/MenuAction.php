@@ -19,54 +19,18 @@
 //
 // $Id:$
 
-namespace App\Admin\Controllers;
+namespace App\Admin\Models;
+use framework\Database\Eloquent\Model;
 
-class suggestAction extends CommonAction {
+class MenuAction extends Model {
 	
-    function __construct() {
+	protected $table = 'menu_action';
+	protected $primaryKey = 'id';
+	
+	private $data = array();
+	
+    public function __construct() {
         parent::__construct();
-        $this->model = $this->models('suggest');
-		$this->auth = $this->models("auth");
-		if(!$this->auth->checkAuthMethod(get('method'))){
-			$this->noPowerPage();
-		}
     }
-	
-    function index() {
-        $data = array();
-		$data["menuAction"] = $this->auth->getMenuAction();
-        $data['list'] = $this->model->index();
-        $url = $this->search(array('starttime','endtime','keyword','partyid'));
-        $total = $this->model->pages['count'];
-        $data['pagelink'] = $this->librarys('Page')->show($url, $total, $perPage = 30, $pageBarNum = 5, $mode = 1);
-        $data['total'] = $total;
-        $this->view('Suggest/list', $data);
-    }
-	
-    function add() {
-        $this->view('Suggest/add');
-    }
-
-    function edit() {
-        $data['row'] = $this->model->getRow();
-        $this->view('Suggest/edit',$data);
-    }
-
-    function detail() {
-        $data["row"] = $this->model->getRow();
-        $this->view('Suggest/detail',$data);
-    }
-	
-    function save() {
-        $this->model->save();
-    }
-	
-    function remove() {
-        $this->model->remove();
-    }
-	
-	function reply(){
-		$this->model->reply();
-	}
 }
 ?>

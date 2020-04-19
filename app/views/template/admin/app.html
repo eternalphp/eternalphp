@@ -38,6 +38,10 @@
 	<script type="text/javascript" src="/assets/js/plugins/notifications/pnotify.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/validation/validate.min.js"></script>
 	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+	
+	<!-- jqGrid -->
+    <script src="/assets/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
+    <script src="/assets/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
 
 	<!-- Theme JS files -->
 	<script type="text/javascript" src="/assets/js/core/app.js"></script>

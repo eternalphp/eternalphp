@@ -31,19 +31,36 @@ class Menu extends Model {
 	
     public function __construct() {
         parent::__construct();
+		
+		$this->menuAction = new MenuAction();
     }
 	
+    /**
+     * 获取菜单数据
+     *
+     * @return $this;
+     */
     public function index() {
 		$this->data = $this->order("parentid asc,sort desc")->select();
 		return $this;
     }
 	
+    /**
+     * 获取顶级菜单
+     *
+     * @return array
+     */
 	public function getMenu(){
 		return $this->where("parentid=0")
 		->order("sort asc")
 		->select();
 	}
 	
+    /**
+     * 创建菜单
+     *
+     * @return json
+     */
 	public function save(){
 		if(requestInt("menuid") > 0){
 			$this->modify();
@@ -52,19 +69,60 @@ class Menu extends Model {
 		}
 	}
 	
+    /**
+     * 创建菜单
+     *
+     * @return json
+     */
 	public function create(){
-		$result = $this->insert($_POST);
-		if($result){
+		$menuid = $this->insert($_POST);
+		if($menuid){
+			
+ 			$menuActions = array();
+			if($_POST["actionids"]){
+				foreach($_POST["actionids"] as $k=>$actionid){
+					$menuActions[] = array(
+						'menuid'=>$menuid,
+						'actionid'=>$actionid
+					);
+				}
+			} 
+			
+			if($menuActions) $this->menuAction->insert($menuActions,true);
+			
+			
+			
 			echo success(array('errmsg'=>'提交成功'));
 		}else{
 			echo fail(array('errmsg'=>'提交失败'));
 		}
 	}
 	
+    /**
+     * 修改菜单
+     *
+     * @return json
+     */
 	public function modify(){
 		if(requestInt("menuid") > 0){
-			$result = $this->where("menuid",requestInt("menuid"))->update($_POST);
+			$menuid = requestInt("menuid");
+			$result = $this->where("menuid",$menuid)->update($_POST);
 			if($result){
+				
+ 				$this->menuAction->where("menuid",$menuid)->delete();
+				$menuActions = array();
+				if($_POST["actionids"]){
+					foreach($_POST["actionids"] as $k=>$actionid){
+						$menuActions[] = array(
+							'menuid'=>$menuid,
+							'actionid'=>$actionid
+						);
+					}
+				} 
+				
+				if($menuActions) $this->menuAction->insert($menuActions,true);
+				
+				
 				echo success(array('errmsg'=>'保存成功'));
 			}else{
 				echo fail(array('errmsg'=>'保存失败'));
@@ -72,6 +130,11 @@ class Menu extends Model {
 		}
 	}
 	
+    /**
+     * 获取树形列表结构
+     *
+     * @return array
+     */
 	public function formatList($pid = 0,$leave = 0){
 		foreach($this->data as $k=>$val){
 			if($val["parentid"] == $pid){
@@ -84,6 +147,11 @@ class Menu extends Model {
 		return $this->dataList;
 	}
 	
+    /**
+     * 获取树形结构
+     *
+     * @return array
+     */
 	public function getAuthMenu($pid = 0){
 		$menus = array();
 		foreach($this->data as $row){
@@ -100,9 +168,17 @@ class Menu extends Model {
 		return $menus;
 	}
 	
+    /**
+     * 获取菜单数据详情
+     *
+     * @return array
+     */
 	public function getRow(){
 		if(requestInt("menuid") > 0){
-			return $this->find(requestInt("menuid"));
+			$menuid = requestInt("menuid");
+			$row = $this->find($menuid);
+			$row["actionids"] = $this->menuAction->where("menuid",$menuid)->toList("actionid");
+			return $row;
 		}
 	}
 }

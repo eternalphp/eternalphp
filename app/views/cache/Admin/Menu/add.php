@@ -53,85 +53,80 @@
 	<div class="content-wrapper" style="display:block;">
 	
 <div class="content">
+    <div class="panel page-header border-top-primary" style="padding-bottom: 0;">
+        <div class="page-header-content">
+            <div class="page-title">
+                <h5> <i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span> </h5>
+            </div>
+        </div>
+        <div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
+            <ul class="breadcrumb">
+                <li><a href="/admin/"><i class="icon-home2 position-left"></i> Home</a></li>
+                <li><a href="/admin/menu/">菜单管理</a></li>
+                <li class="active">添加菜单</li>
+            </ul>
+        </div>
+    </div>
+    <form action="/admin/menu/save" class="form-validate-jquery" method="post">
+        <div class="panel panel-flat">
+            <div class="panel-heading">
+                <h5 class="panel-title">添加菜单</h5>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label>上级菜单:</label>
+                    <select data-placeholder="请选择上级菜单" name="parentid" class="select">
+                        <option value="0">顶级菜单</option>
+						<?php foreach($menu as $k=>$val) {?><option value="<?=$val['menuid']?>" <?php if($val["menuid"] == $row["parentid"]) {?>selected="selected" <?php }?>> <?=$val["space"]?> <?=$val["name"]?> </option>
+						<?php }?>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>菜单名称:</label>
+                    <input type="text" name="name" class="form-control" placeholder="菜单名称" value="<?=$row['name']?>" />
+                </div>
+                <div class="form-group">
+                    <label>地址:</label>
+                    <input type="text" name="url" class="form-control" placeholder="Url" value="<?=$row['url']?>"/>
+                </div>
 
-  <div class="panel page-header border-top-primary" style="padding-bottom: 0;">
-    <div class="page-header-content">
-      <div class="page-title">
-        <h5> <i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">菜单管理</span> </h5>
-      </div>
-    </div>
-    <div class="breadcrumb-line breadcrumb-line-wide" style="box-shadow: none;">
-      <ul class="breadcrumb">
-        <li><a href="/admin/"><i class="icon-home2 position-left"></i> Home</a></li>
-        <li><a href="/admin/menu/">菜单管理</a></li>
-        <li class="active">添加菜单</li>
-      </ul>
-    </div>
-  </div>
-  
-  <form action="/admin/menu/save" class="form-validate-jquery" method="post">
-    <div class="panel panel-flat">
-      <div class="panel-heading">
-        <h5 class="panel-title">添加菜单</h5>
-	  </div>
-      <div class="panel-body">
-	  
-        <div class="form-group">
-          <label>上级菜单:</label>
-			<select data-placeholder="请选择上级菜单" name="parentid" class="select">
-				<option value="0">顶级菜单</option>
-				<?php foreach($menu as $k=>$val) {?>
-				<option value="<?=$val['menuid']?>" <?php if($val["menuid"] == $row["parentid"]) {?> selected="selected" <?php }?>> <?=$val["space"]?> <?=$val["name"]?> </option>
-				<?php }?>
-			</select>
+				<div class="form-group">
+					<label class="display-block text-semibold">权限：</label>
+					<?php foreach($action as $val) {?><label class="checkbox-inline checkbox-right">
+						<input type="checkbox" name="actionids" value="<?=$val["actionid"]?>" class="styled" <?php if(in_array($val["actionid"],$row["actionids"])) {?>checked="checked" <?php }?>>
+						<?=$val["name"]?>
+					</label>
+					<?php }?>
+				</div>
+				
+                <div class="form-group">
+                    <label class="display-block">显示/隐藏:</label>
+                    <label class="radio-inline">
+                    <input type="radio" name="hidden" value="0" class="styled" <?php if($row["hidden"] == 0) {?>checked="checked" <?php }?>>
+                    显示 </label>
+                    <label class="radio-inline">
+                    <input type="radio" name="hidden" value="1" class="styled" <?php if($row["hidden"] == 1) {?>checked="checked" <?php }?>>
+                    隐藏 </label>
+                </div>
+                <div class="form-group">
+                    <label>排序:</label>
+                    <input type="text" name="sort" class="form-control" placeholder="请输入数字" value="<?=$row['sort']?>" />
+                </div>
+                <div class="form-group">
+                    <label>图标:</label>
+                    <input type="text" name="style" class="form-control" placeholder="请输入图标样式" value="<?=$row['style']?>">
+                </div>
+                <div class="form-group">
+                    <label>备注:</label>
+                    <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注"><?=$row['remark']?></textarea>
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-primary">提交 <i class="icon-arrow-right14 position-right"></i></button>
+                </div>
+                <input name="menuid" type="hidden" value="<?=$row['menuid']?>" />
+            </div>
         </div>
-	  
-        <div class="form-group">
-          <label>菜单名称:</label>
-          <input type="text" name="name" class="form-control" placeholder="菜单名称" value="<?=$row['name']?>" />
-        </div>
-		
-        <div class="form-group">
-          <label>地址:</label>
-          <input type="text" name="url" class="form-control" placeholder="Url" value="<?=$row['url']?>"/>
-        </div>
-		
-        <div class="form-group">
-          <label class="display-block">显示/隐藏:</label>
-          <label class="radio-inline">
-		  <input type="radio" name="hidden" value="0" class="styled" <?php if($row["hidden"] == 0) {?> checked="checked" <?php }?>>
-          显示
-          </label>
-          <label class="radio-inline">
-		  <input type="radio" name="hidden" value="1" class="styled" <?php if($row["hidden"] == 1) {?> checked="checked" <?php }?>>
-          隐藏
-          </label>
-        </div>
-		
-        <div class="form-group">
-          <label>排序:</label>
-          <input type="text" name="sort" class="form-control" placeholder="请输入数字" value="<?=$row['sort']?>" />
-        </div>
-		
-        <div class="form-group">
-          <label>图标:</label>
-          <input type="text" name="style" class="form-control" placeholder="请输入图标样式" value="<?=$row['style']?>">
-        </div>
-
-        <div class="form-group">
-          <label>备注:</label>
-          <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注"><?=$row['remark']?></textarea>
-        </div>
-		
-        <div class="text-right">
-          <button type="submit" class="btn btn-primary">提交 <i class="icon-arrow-right14 position-right"></i></button>
-        </div>
-		
-		<input name="menuid" type="hidden" value="<?=$row['menuid']?>" />
-		
-      </div>
-    </div>
-  </form>
+    </form>
 </div>
 
 	</div>
@@ -139,8 +134,7 @@
 
 </body>
 </html>
-
-<script>
+ <script>
     // Setup validation
     // ------------------------------
 
@@ -200,10 +194,17 @@
 		},
 	    submitHandler: function(form){
 			var formData = $(form).serializeArray(); 
+			console.log(formData);
 			var data = {};
 			$.each(formData, function() {
 			   data[this.name] = this.value;
 			});
+			
+			var values = [];
+			$(":input[name='actionids']:checked").each(function(){
+				values.push($(this).val());
+			})
+			data["actionids"] = values;
 			  
 		    $.ajax({
 				url:"/admin/menu/save",
@@ -218,7 +219,9 @@
 							icon: 'icon-checkmark3',
 							type: 'success'
 						});
-						location.href = "/admin/menu";
+						setTimeout(function(){
+							location.href = "/admin/menu";
+						},500);
 					}else{
 						new PNotify({
 							title: '提示',

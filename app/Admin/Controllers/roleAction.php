@@ -1,37 +1,44 @@
 <?php
 
 namespace App\Admin\Controllers;
+use App\Admin\Models\Role;
 
-class roleAction extends CommonAction{
-
-	function __construct() {
+class roleAction extends CommonAction {
+	
+	
+	public function __construct(Role $model) {
 		parent::__construct();
-		$this->model = $this->models("role");
-		$this->auth = $this->models("auth");
-		if(!$this->auth->checkAuthMethod(get('method'))){
-			$this->noPowerPage();
-		}
+		$this->model = $model;
+		$this->view->realtime();
 	}
 	
 	function index(){
-		$data["menuAction"] = $this->auth->getMenuAction();
+		$data = array();
 		$data["list"] = $this->model->index();
-		$url = $this->search(array('keyword'));
-		$total = $this->model->pages['count'];
-		$data['pagelink'] = $this->librarys('Page')->show($url, $total, $perPage = C('offset'), $pageBarNum = 5, $mode = 4);
-		$data['total'] = $total;
-		$this->view('list',$data);
+		$this->view('index',$data);
+	}
+	
+	function getList(){
+		$data["rows"] = $this->model->index();
+		$data["total"] = $this->model->pages["total"];
+		$data["totalNotFiltered"] = $this->model->pages["total"];
+		echo json_encode($data["rows"]);
 	}
 	
 	function add(){
-		$data["list"] = $this->model->getMenu();
-		$this->view($data);
+		$data = array();
+		$this->view('add',$data);
 	}
 	
 	function edit(){
+		$data = array();
 		$data["row"] = $this->model->getRow();
-		$data["list"] = $this->model->getMenu();
-		$this->view($data);
+		$this->view('add',$data);
+	}
+	
+	function detail(){
+		$data = array();
+		$this->view('detail',$data);
 	}
 	
 	function save(){
@@ -39,7 +46,7 @@ class roleAction extends CommonAction{
 	}
 	
 	function remove(){
-		$this->model->remove();
+
 	}
 }
 

@@ -19,10 +19,17 @@ class roleAction extends CommonAction {
 	}
 	
 	function getList(){
-		$data["rows"] = $this->model->index();
-		$data["total"] = $this->model->pages["total"];
-		$data["totalNotFiltered"] = $this->model->pages["total"];
-		echo json_encode($data["rows"]);
+		$list = $this->model->index();
+		if($list){
+			foreach($list as $k=>$val){
+				$list[$k]["statusText"] = ($val["status"] == 1)?'启用':'未启用';
+				$list[$k]["links"] = '<a href="">编辑</a> | <a href="">删除</a>';
+			}
+		}
+		
+		$data["rows"] = $list;
+		$data["total"] = $this->model->pages["count"];
+		echo json_encode($data);
 	}
 	
 	function add(){

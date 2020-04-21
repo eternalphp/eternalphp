@@ -13,6 +13,7 @@
 	<link href="/assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/common.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -38,10 +39,6 @@
 	<script type="text/javascript" src="/assets/js/plugins/notifications/pnotify.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/validation/validate.min.js"></script>
 	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
-	
-	<!-- jqGrid -->
-    <script src="/assets/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
-    <script src="/assets/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
 
 	<!-- Theme JS files -->
 	<script type="text/javascript" src="/assets/js/core/app.js"></script>
@@ -80,16 +77,42 @@
 		</div>
 	</div>
 	
+	<div class="panel panel-default">
+		<div class="panel-heading">查询条件</div>
+		<div class="panel-body">
+			<form id="formSearch" class="form-horizontal">
+				<div class="form-group" style="margin-top:15px">
+					<label class="control-label col-sm-1" for="txt_search_departmentname">部门名称</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="txt_search_departmentname">
+					</div>
+					<label class="control-label col-sm-1" for="txt_search_statu">状态</label>
+					<div class="col-sm-3">
+						<input type="text" class="form-control" id="txt_search_statu">
+					</div>
+					<div class="col-sm-4" style="text-align:left;">
+						<button type="button" style="margin-left:50px" id="btn_query" class="btn btn-primary">查询</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>  
+	
+	<div id="toolbar" class="btn-group">
+		<button id="btn_add" type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+		</button>
+		<button id="btn_edit" type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+		</button>
+		<button id="btn_delete" type="button" class="btn btn-default">
+			<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+		</button>
+	</div>
+	
 	<div class="panel panel-flat">
 	  <div class="table-responsive">
-		<table width="100%" class="table table-striped" 
-			data-toggle="table" 
-			data-url="/admin/role/getList" 
-			data-pagination="true" 
-			data-icon-size="outline" 
-			data-search="true"
-			data-show-search-button="true"
-		>
+		<table width="100%" id="table" class="table table-striped">
 		  <thead>
 			<tr>
 			  <th width="7%" data-field="roleid">#</th>
@@ -117,5 +140,35 @@
   	  $("#add").click(function(){
 	  	  location.href = "/admin/role/add";
 	  }) 
+	  
+	 $('#table').bootstrapTable({
+		url: '/admin/role/getList',         //请求后台的URL（*）
+		method: 'post',                      //请求方式（*）
+		toolbar: '#toolbar',                //工具按钮用哪个容器
+		striped: true,                      //是否显示行间隔色
+		cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+		pagination: true,                   //是否显示分页（*）
+		sortOrder: "asc",                   //排序方式
+		queryParams: function(){},//传递参数（*）
+		sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+		pageNumber: 1,                       //初始化加载第一页，默认第一页
+		pageSize: 10,                       //每页的记录行数（*）
+		pageList: [10, 25, 50, 100],        //可供选择的每页的行数（*）
+		columns:[{
+			checkbox: true
+		},{
+			field:"rolename",
+			title:"角色名称"
+		},{
+			field:"createtime",
+			title:"创建时间"
+		},{
+			field:"statusText",
+			title:"状态"
+		},{
+			field:"links",
+			title:"管理"
+		}]
+	 });
   })
 </script>

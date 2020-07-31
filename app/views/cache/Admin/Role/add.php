@@ -1,8 +1,52 @@
-@extends("admin.app")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
 
-@section("title","后台管理系统")
+	<!-- Global stylesheets -->
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">-->
+	<link href="/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/common.css" rel="stylesheet" type="text/css">
+	<!-- /global stylesheets -->
 
-@section("loadCSS")
+	<!-- Core JS files -->
+	<script type="text/javascript" src="/assets/js/plugins/loaders/pace.min.js"></script>
+	<script type="text/javascript" src="/assets/js/core/libraries/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/core/libraries/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/loaders/blockui.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/ui/nicescroll.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/ui/drilldown.js"></script>
+	<!-- /core JS files -->
+
+	<script type="text/javascript" src="/assets/js/plugins/visualization/d3/d3.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
+	
+	<script type="text/javascript" src="/assets/js/plugins/forms/selects/select2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switch.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/styling/switchery.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/styling/uniform.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/selects/bootstrap_multiselect.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/ui/moment/moment.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/pickers/daterangepicker.js"></script>
+	<script type="text/javascript" src="/assets/js/core/libraries/jquery_ui/datepicker.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/notifications/pnotify.min.js"></script>
+	<script type="text/javascript" src="/assets/js/plugins/forms/validation/validate.min.js"></script>
+	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
+
+	<!-- Theme JS files -->
+	<script type="text/javascript" src="/assets/js/core/app.js"></script>
+	<script type="text/javascript" src="/assets/js/pages/layout_fixed_custom.js"></script>
+	<script type="text/javascript" src="/assets/js/common.js"></script>
+	<!-- /theme JS files -->
+	
+	
 <style type="text/css">
 	.schoolDisplay{ display:none;}
 	.viewRuleBtn{ height:30px; line-height:30px;}
@@ -51,9 +95,15 @@
 
 
 </style>
-@endsection
 
-@section("content")
+
+</head>
+
+<body>
+
+	<!-- Main content -->
+	<div class="content-wrapper" style="display:block;">
+	
 <div class="content">
   <div class="panel page-header border-top-primary" style="padding-bottom: 0;">
     <div class="page-header-content">
@@ -77,83 +127,83 @@
       <div class="panel-body">
         <div class="form-group">
           <label>角色名称:</label>
-          <input type="text" name="rolename" class="form-control" placeholder="角色名称" value="{{ $row['rolename'] }}" />
+          <input type="text" name="rolename" class="form-control" placeholder="角色名称" value="<?=$row['rolename']?>" />
         </div>
         <div class="form-group">
           <label class="display-block">状态:</label>
           <label class="radio-inline">
-          <input type="radio" name="status" value="1" class="styled" @if($row["status"] == 1) checked="checked" @endif>
+          <input type="radio" name="status" value="1" class="styled" <?php if($row["status"] == 1) {?>checked="checked" <?php }?>>
           启用 </label>
           <label class="radio-inline">
-          <input type="radio" name="status" value="2" class="styled" @if($row["status"] == 2) checked="checked" @endif>
+          <input type="radio" name="status" value="2" class="styled" <?php if($row["status"] == 2) {?>checked="checked" <?php }?>>
           禁用 </label>
         </div>
         <div class="form-group">
           <label>排序:</label>
-          <input type="text" name="sort" class="form-control" placeholder="请输入数字" value="{{ $row['sort'] }}" />
+          <input type="text" name="sort" class="form-control" placeholder="请输入数字" value="<?=$row['sort']?>" />
         </div>
         <div class="form-group">
           <label>权限设置:</label>
           <div class="viewRuleBtn"> <a href="jsvascript:void(0)" class="switch"> <i class="icon-chevron-down"></i> <span>展开设置权限</span> </a> </div>
           <div class="viewRule">
 		  
-		  	@foreach($menus as $val)
-            <div class="panel" style="margin-bottom:10px;">
+		  	<?php foreach($menus as $val) {?><div class="panel" style="margin-bottom:10px;">
               <div class="panel-header">
                 <h3 style="margin-bottom:0px;">
-                  <input name="menuid[]" class="root" type="checkbox" value="{{ $val['menuid'] }}">
-                  {{ $val['name'] }}</h3>
+                  <input name="menuid[]" class="root" type="checkbox" value="<?=$val['menuid']?>">
+                  <?=$val['name']?></h3>
               </div>
               <div class="panel-body">
 			  	
 				
                 <div class="rolePannel">
 				
-					@foreach($val["menus"] as $menu)
-                  <ul class="menuPannel">
+					<?php foreach($val["menus"] as $menu) {?><ul class="menuPannel">
                     <dt>
-                      <input name="menuid[]" type="checkbox" class="menu" value="{{ $menu['menuid'] }}">
-                      {{ $menu['name'] }}</dt>
+                      <input name="menuid[]" type="checkbox" class="menu" value="<?=$menu['menuid']?>">
+                      <?=$menu['name']?></dt>
 					  
-					  @foreach($menu["items"] as $item)
-                    <li class="itemPannel">
+					  <?php foreach($menu["items"] as $item) {?><li class="itemPannel">
                       <div>
-                        <input name="itemid[]" type="checkbox" class="item" value="{{ $item['menuid'] }}">
-                        {{ $item["name"] }}</div>
+                        <input name="itemid[]" type="checkbox" class="item" value="<?=$item['menuid']?>">
+                        <?=$item["name"]?></div>
                       <p>
-					    @foreach($item["actions"] as $action)
-                        <input name="actionid[{{ $item['menuid'] }}][]" type="checkbox" class="action" value="{{ $action['actionid'] }}">
-                        {{ $action["name"] }}
-						@endforeach
+					    <?php foreach($item["actions"] as $action) {?><input name="actionid[<?=$item['menuid']?>][]" type="checkbox" class="action" value="<?=$action['actionid']?>">
+                        <?=$action["name"]?>
+						<?php }?>
 					   </p>
                     </li>
-					@endforeach
+					<?php }?>
                   </ul>
-				  @endforeach
+				  <?php }?>
                 </div>
 				
 				
               </div>
             </div>
-			@endforeach
+			<?php }?>
 			
           </div>
         </div>
         <div class="form-group">
           <label>备注:</label>
-          <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注">{{ $row['remark'] }}</textarea>
+          <textarea name="remark" rows="5" cols="5" class="form-control" placeholder="备注"><?=$row['remark']?></textarea>
         </div>
         <div class="text-right">
           <button type="submit" class="btn btn-primary">提交 <i class="icon-arrow-right14 position-right"></i></button>
         </div>
-        <input name="roleid" type="hidden" value="{{ $row['roleid'] }}" />
+        <input name="roleid" type="hidden" value="<?=$row['roleid']?>" />
       </div>
     </div>
   </form>
 </div>
-@endsection 
 
-@section("loadJS")
+	</div>
+	<!-- /main content -->
+
+</body>
+</html>
+
 <script>
     // Setup validation
     // ------------------------------
@@ -323,4 +373,3 @@
         validator.resetForm();
     });
 </script>
-@endsection

@@ -2,44 +2,37 @@
 
 namespace App\Admin\Controllers;
 use App\Admin\Models\Role;
+use App\Admin\Services\RoleService;
+use App\Admin\Services\ResponseService;
 
 class roleAction extends CommonAction {
 	
 	
-	public function __construct(Role $model) {
+	public function __construct(RoleService $service,ResponseService $response) {
 		parent::__construct();
-		$this->model = $model;
+		$this->service = $service;
+		$this->response = $response;
 		$this->view->realtime();
 	}
 	
 	function index(){
-		$data = array();
-		$data["list"] = $this->model->index();
-		$this->view('index',$data);
+		$this->view('index');
 	}
 	
 	function getList(){
-		$list = $this->model->index();
-		if($list){
-			foreach($list as $k=>$val){
-				$list[$k]["statusText"] = ($val["status"] == 1)?'启用':'未启用';
-				$list[$k]["links"] = '<a href="">编辑</a> | <a href="">删除</a>';
-			}
-		}
-		
-		$data["rows"] = $list;
-		$data["total"] = $this->model->pages["count"];
-		echo json_encode($data);
+		$data = $this->service->getList();
+		$this->response->sendJson($data);
 	}
 	
 	function add(){
 		$data = array();
+		$data["menus"] = $this->service->getMenus();
 		$this->view('add',$data);
 	}
 	
 	function edit(){
 		$data = array();
-		$data["row"] = $this->model->getRow();
+		$data["row"] = $this->service->getRow();
 		$this->view('add',$data);
 	}
 	
@@ -49,7 +42,7 @@ class roleAction extends CommonAction {
 	}
 	
 	function save(){
-		$this->model->save();
+		$this->service->save();
 	}
 	
 	function remove(){

@@ -7,7 +7,7 @@
 	<title></title>
 
 	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">-->
 	<link href="/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
@@ -45,6 +45,8 @@
 	<script type="text/javascript" src="/assets/js/pages/layout_fixed_custom.js"></script>
 	<script type="text/javascript" src="/assets/js/common.js"></script>
 	<!-- /theme JS files -->
+	
+	
 
 </head>
 
@@ -122,7 +124,7 @@
 <script src="/assets/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
 <script>
   $(function(){
-  	  $("#add").click(function(){
+  	  $("#btn_add").click(function(){
 	  	  location.href = "/admin/role/add";
 	  }) 
 	  

@@ -1,0 +1,13 @@
+[2020-07-22 14:20:59] | ::1 | http://localhost:8083/admin
+[2020-07-22 14:21:00] | ::1 | http://localhost:8083/admin/menu/page
+[2020-07-22 14:21:06] | ::1 | http://localhost:8083/admin/role
+[2020-07-22 14:21:08] | ::1 | http://localhost:8083/admin/role/getList
+[2020-07-22 14:21:10] | ::1 | http://localhost:8083/admin/user
+[2020-07-22 14:21:16] | ::1 | http://localhost:8083/admin/account
+[2020-07-22 14:21:17] | ::1 | http://localhost:8083/admin/role
+[2020-07-22 14:21:18] | ::1 | http://localhost:8083/admin/role/getList
+[2020-07-22 14:21:47] | ::1 | http://localhost:8083/admin/role
+[2020-07-22 14:21:47] | ::1 | http://localhost:8083/admin/role/getList
+[2020-07-22 14:21:49] | ::1 | http://localhost:8083/admin/role
+[2020-07-22 14:21:49] | ::1 | http://localhost:8083/admin/role/getList
+[2020-07-22 14:22:13] | ::1 | http://localhost:8083/admin/menu

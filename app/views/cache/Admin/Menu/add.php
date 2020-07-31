@@ -7,12 +7,13 @@
 	<title></title>
 
 	<!-- Global stylesheets -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">
+	<!--<link href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900" rel="stylesheet" type="text/css">-->
 	<link href="/assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/core.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/components.min.css" rel="stylesheet" type="text/css">
 	<link href="/assets/css/minified/colors.min.css" rel="stylesheet" type="text/css">
+	<link href="/assets/css/common.css" rel="stylesheet" type="text/css">
 	<!-- /global stylesheets -->
 
 	<!-- Core JS files -->
@@ -38,10 +39,6 @@
 	<script type="text/javascript" src="/assets/js/plugins/notifications/pnotify.min.js"></script>
 	<script type="text/javascript" src="/assets/js/plugins/forms/validation/validate.min.js"></script>
 	<script type="text/javascript" src="/ckeditor/ckeditor.js"></script>
-	
-	<!-- jqGrid -->
-    <script src="/assets/js/plugins/jqgrid/i18n/grid.locale-cn.js?0820"></script>
-    <script src="/assets/js/plugins/jqgrid/jquery.jqGrid.min.js?0820"></script>
 
 	<!-- Theme JS files -->
 	<script type="text/javascript" src="/assets/js/core/app.js"></script>

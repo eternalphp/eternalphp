@@ -1,0 +1,9 @@
+<?php
+
+$dir = __DIR__ . "/public";
+
+exec("php -S localhost:8080 -t $dir",$result);
+print_r($result);
+
+?>
+
